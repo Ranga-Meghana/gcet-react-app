@@ -15,7 +15,7 @@ export default function Register() {
   const API = import.meta.env.VITE_API_URL;
 
   const handleSubmit = async () => {
-  const user = { name, email, password };
+  const user = { name, email, pass };
  
 
   try {
@@ -53,7 +53,7 @@ export default function Register() {
         type="password"
         placeholder="Password"
         value={password}
-        onChange={e => setPassword(e.target.value)}
+        onChange={e => setPass(e.target.value)}
       />
       <button onClick={handleSubmit}>Submit</button>
     </div>

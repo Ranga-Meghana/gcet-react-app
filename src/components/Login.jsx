@@ -51,7 +51,7 @@ export default function Login() {
         type="password"
         placeholder="Password"
         value={password}
-        onChange={e => setPassword(e.target.value)}
+        onChange={e => setPass(e.target.value)}
       />
       <button onClick={handleLogin}>Submit</button>
 
