@@ -8,11 +8,9 @@ export default function Product() {
   const { user } = useContext(AppContext);
 
   const [products, setProducts] = useState([]);
-   const API = import.meta.env.VITE_API_URL;
    const fetchProducts = async () => {
       try {
-         const url = `${API}/products`;
-        const res = await axios.get(url);
+        const res = await axios.get("http://localhost:8080/products");
         setProducts(res.data);
       } catch (err) {
         console.error("Error", err);
