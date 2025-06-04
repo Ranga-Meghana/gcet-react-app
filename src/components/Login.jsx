@@ -7,7 +7,7 @@ import '../App.css';
 export default function Login() {
   const { setUser } = useContext(AppContext); 
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [password, setPass] = useState("");
   const [msg, setMsg] = useState(""); 
   const navigate = useNavigate();
   const API = import.meta.env.VITE_API_URL;
@@ -17,7 +17,7 @@ export default function Login() {
 
     try {
      
-      const response = await axios.post(url, { email, password });
+      const response = await axios.post(url, { email, pass });
 
       if (response.data.token) {
         setUser(response.data); 

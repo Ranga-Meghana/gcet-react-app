@@ -9,7 +9,7 @@ export default function Register() {
   const { setUsers } = useContext(AppContext); 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [password, setPass] = useState("");
   const [msg, setMsg] = useState("");
   const navigate = useNavigate();
   const API = import.meta.env.VITE_API_URL;

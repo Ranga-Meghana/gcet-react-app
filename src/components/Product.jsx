@@ -10,7 +10,7 @@ export default function Product() {
   const [products, setProducts] = useState([]);
    const fetchProducts = async () => {
       try {
-        const res = await axios.get("https://gcet-node-app.vercel.app/orders/meghana@example.com");
+        const res = await axios.get("http://localhost:8080/products");
         setProducts(res.data);
       } catch (err) {
         console.error("Error", err);
