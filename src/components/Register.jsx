@@ -1,20 +1,20 @@
-import { useContext, useState } from "react";
+import React, { useContext, useState } from "react";
 import { AppContext } from "../App"; 
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import '../App.css';
 
 export default function Register() {
-  useContext(AppContext); 
+  const { setUsers } = useContext(AppContext); 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [password, setPass] = useState("");
+  const [password, setPassword] = useState("");
   const [msg, setMsg] = useState("");
   const navigate = useNavigate();
   const API = import.meta.env.VITE_API_URL;
 
   const handleSubmit = async () => {
-  const user = { name, email, pass };
+  const user = { name, email, password };
  
 
   try {
@@ -52,7 +52,7 @@ export default function Register() {
         type="password"
         placeholder="Password"
         value={password}
-        onChange={e => setPass(e.target.value)}
+        onChange={e => setPassword(e.target.value)}
       />
       <button onClick={handleSubmit}>Submit</button>
     </div>
