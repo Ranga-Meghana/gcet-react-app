@@ -18,7 +18,7 @@ export default function Register() {
  
 
   try {
-    const url = `${API}/register`;
+    const url = `${API}/users/register`;
     const response = await axios.post(url, user);
 
 

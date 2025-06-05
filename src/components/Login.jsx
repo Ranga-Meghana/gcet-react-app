@@ -13,7 +13,7 @@ export default function Login() {
   const API = import.meta.env.VITE_API_URL;
 
   const handleLogin = async () => {
-    const url = `${API}/login`;
+    const url = `${API}/users/login`;
 
     try {
      
@@ -53,14 +53,10 @@ export default function Login() {
         value={password}
         onChange={e => setPassword(e.target.value)}
       />
-      <button onClick={handleLogin}>Submit</button>
-
-      <button
-        style={{ marginTop: "12px", backgroundColor: "#f9dcdc", color: "#d86c7a" }}
-        onClick={handleCreateAccount}
-      >
-        Create Account
-      </button>
+      <div className="button-row">
+        <button onClick={handleLogin}>Submit</button>
+        <button className="create-account-btn" onClick={handleCreateAccount}>Create Account</button>
+      </div>
     </div>
   );
 }

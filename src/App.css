@@ -108,3 +108,19 @@ button:hover {
 .form-container p {
   color: #6b4f3b;
 }
+
+.button-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.create-account-btn {
+  background-color: #f9dcdc;
+  color: white;
+}
+
+.button-row button {
+  width: 50%;
+}
