@@ -35,7 +35,6 @@ export default function Product() {
     <div className="product-card" key={product._id}>
       <h3>{product.name}</h3>
       <p>${product.price}</p>
-      <img src={product.image} alt={product.name} className="product-image" />
       <button onClick={() => addToCart(product)}>Add to Cart</button>
     </div>
   ))}
