@@ -4,6 +4,7 @@ import viteLogo from "/vite.svg";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Cart from "./components/Cart";
 import Login from "./components/Login";
+import Product from "./components/Product";
 import Register from "./components/Register";
 import Logout from "./components/Logout";
 import Footer from "./components/Footer";
