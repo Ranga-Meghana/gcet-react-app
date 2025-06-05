@@ -1,62 +1,48 @@
-button {
-    width: 120px;
-    height: 45px;
-    background: linear-gradient(135deg, #8B5E3C 0%, #D2B48C 100%);
-    color: #fff8f0;
-    font-weight: bold;
-    border: none;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(139, 69, 19, 0.3);
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    letter-spacing: 0.7px;
-    font-size: 16px;
-    font-family: 'Segoe UI', sans-serif;
-}
-
-button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 18px rgba(101, 67, 33, 0.4);
-    background: linear-gradient(135deg, #A97458 0%, #C8AD7F 100%);
-}
-
-button:active {
-    transform: scale(0.97);
-    box-shadow: 0 2px 8px rgba(101, 67, 33, 0.4);
-    background: linear-gradient(135deg, #7B4B3A 0%, #BFA87A 100%);
-}
-
-button:focus {
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(165, 118, 84, 0.5);
-}
-
-.product-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-  margin-top: 20px;
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  padding-top: 20px;
 }
 
 .product-card {
-  background-color: #fff8f0;
-  border: 2px solid #d6b28c;
+  background: #fff;
+  border: 2px solid #f9dcdc;
   border-radius: 12px;
-  padding: 20px;
-  width: 220px;
-  box-shadow: 0 4px 8px rgba(75, 59, 42, 0.2);
+  padding: 15px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
   text-align: center;
 }
 
-.product-card h3 {
-  color: #6b4f3b;
-  margin-bottom: 5px;
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.product-card h4 {
+  color: #d86c7a;
+  margin-bottom: 8px;
+  font-size: 18px;
 }
 
 .product-card p {
-  font-weight: bold;
-  color: #4b3b2a;
   margin-bottom: 10px;
+  font-weight: bold;
+  color: #555;
 }
 
+.product-card button {
+  background-color: #d86c7a;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.product-card button:hover {
+  background-color: #c35567;
+}

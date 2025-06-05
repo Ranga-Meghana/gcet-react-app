@@ -12,9 +12,8 @@ export default function Product() {
   const fetchProducts = async () => {
     try {
       console.log(API)
-    //   const res = await axios.get(`${API}/products`);
-          const res = await axios.get(`https://gcet-node-app-chi.vercel.app/products`)
-
+      // const res = await axios.get(`https://gcet-node-app-nine.vercel.app/products`);
+      const res = await axios.get(`${API}/products`);
       setProducts(res.data);
     } catch (err) {
       console.error("Error fetching products:", err);
@@ -22,23 +21,35 @@ export default function Product() {
   };
 
   const addToCart = (product) => {
-    setCart(prev => [...prev, product]);
-  };
+  const existingProductIndex = cart.findIndex(p => p._id === product._id);
+  if (existingProductIndex !== -1) {
+    const newCart = [...cart];
+    newCart[existingProductIndex].quantity = (newCart[existingProductIndex].quantity || 1) + 1;
+    setCart(newCart);
+  } else {
+    setCart(prev => [...prev, { ...product, quantity: 1 }]);
+  }
+};
+
 
   useEffect(() => {
     fetchProducts();
   }, []);
 
   return (
-    <div className="product-list">
+    <div className="form-container">
+      {user && <h2 className="form-title">Welcome, {user.name}!</h2>}
+      <p style={{ color: "#d86c7a" }}>Product List</p><br />
+
+      <div className="product-grid">
   {products.map(product => (
-    <div className="product-card" key={product._id}>
-      <h3>{product.name}</h3>
+    <div key={product._id} className="product-card">
+      <h4>{product.name}</h4>
       <p>${product.price}</p>
       <button onClick={() => addToCart(product)}>Add to Cart</button>
     </div>
   ))}
 </div>
-
+    </div>
   );
 }

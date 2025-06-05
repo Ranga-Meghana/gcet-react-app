@@ -6,8 +6,8 @@
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to bottom, #f4e7d3, #e8d3b9);
-  color: #4b3b2a;
+  background: linear-gradient(to bottom, #f8ede3, #fce1e4);
+  color: #333;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -15,18 +15,17 @@ body {
 
 header,
 footer {
-  background-color: #d6b28c;
+  background-color: #f9dcdc;
   padding: 20px;
   text-align: center;
 }
 
 header h1 {
-  color: #6b4f3b;
+  color: #d86c7a;
   margin-bottom: 10px;
 }
-
 nav a {
-  color: #6b4f3b;
+  color: #d86c7a;
   text-decoration: none;
   margin: 0 10px;
   font-weight: 500;
@@ -39,11 +38,11 @@ nav a:hover {
 footer {
   margin-top: auto;
   font-size: 14px;
-  color: #6b4f3b;
+  color: #d86c7a;
 }
 
 a {
-  color: #6b4f3b;
+  color: #d86c7a;
   text-decoration: none;
   margin: 0 10px;
   font-weight: 500;
@@ -62,18 +61,18 @@ main {
 }
 
 .form-container {
-  border: 2px dotted #6b4f3b;
+  border: 2px dotted #d86c7a;
   border-radius: 10px;
-  background: linear-gradient(to right, #f4e7d3, #e8d3b9);
+  background: linear-gradient(to right, #f8ede3, #fce1e4);
   padding: 30px 25px;
-  width: 300px;
-  box-shadow: 0 0 10px rgba(75, 59, 42, 0.1);
+  width: 600px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-align: center;
   margin: 0 auto;
 }
 
 .form-title {
-  color: #6b4f3b;
+  color: #d86c7a;
   margin-bottom: 20px;
 }
 
@@ -81,17 +80,17 @@ input {
   width: 100%;
   padding: 10px;
   margin-bottom: 12px;
-  border: 1px solid #bca187;
+  border: 1px solid #ccc;
   border-radius: 6px;
-  background-color: #fffaf5;
-  color: #4b3b2a;
+  background-color: #fff;
+  color: #333;
   font-size: 14px;
 }
 
 button {
   width: 100%;
   padding: 10px;
-  background-color: #8b5e3c;
+  background-color: #d86c7a;
   color: white;
   font-size: 15px;
   border: none;
@@ -101,26 +100,10 @@ button {
 }
 
 button:hover {
-  background-color: #724c31;
+  background-color: #c35567;
 }
 
 .form-container h2,
 .form-container p {
-  color: #6b4f3b;
-}
-
-.button-row {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  margin-top: 20px;
-}
-
-.create-account-btn {
-  background-color: #f9dcdc;
-  color: white;
-}
-
-.button-row button {
-  width: 50%;
+  color: #d86c7a;
 }
