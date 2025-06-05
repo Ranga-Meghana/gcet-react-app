@@ -1,48 +1,51 @@
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 22px;
   padding-top: 20px;
 }
 
 .product-card {
-  background: #fff;
-  border: 2px solid #f9dcdc;
-  border-radius: 12px;
-  padding: 15px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background-color: #fff0f2; 
+  border: 2px solid #d86c7a; 
+  border-radius: 14px;
+  padding: 20px 24px;
+  box-shadow: 0 5px 12px rgba(216, 108, 122, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: center;
 }
 
 .product-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(216, 108, 122, 0.3);
 }
 
 .product-card h4 {
-  color: #d86c7a;
-  margin-bottom: 8px;
-  font-size: 18px;
+  color: #b84758; /* a deeper pink shade for headings */
+  margin-bottom: 12px;
+  font-size: 20px;
+  font-weight: 700;
 }
 
 .product-card p {
-  margin-bottom: 10px;
-  font-weight: bold;
-  color: #555;
+  margin-bottom: 14px;
+  font-weight: 600;
+  color: #8b444b; /* muted dark rose */
+  font-size: 18px;
 }
 
 .product-card button {
   background-color: #d86c7a;
   color: #fff;
   border: none;
-  padding: 8px 12px;
-  border-radius: 6px;
+  padding: 12px 22px;
+  border-radius: 8px;
   cursor: pointer;
-  font-size: 14px;
-  transition: background-color 0.2s;
+  font-size: 16px;
+  font-weight: 700;
+  transition: background-color 0.3s ease;
 }
 
 .product-card button:hover {
-  background-color: #c35567;
+  background-color: #b84758;
 }
