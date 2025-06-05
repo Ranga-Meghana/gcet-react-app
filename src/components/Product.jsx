@@ -21,26 +21,20 @@ export default function Product() {
   };
 
   const addToCart = (product) => {
-  setCart((prevCart) => {
-    const existingIndex = prevCart.findIndex(p => p._id === product._id);
-    if (existingIndex !== -1) {
-      return prevCart.map((p, i) =>
-        i === existingIndex ? { ...p, quantity: (p.quantity || 1) + 1 } : p
-      );
-    } else {
-      return [...prevCart, { ...product, quantity: 1 }];
-    }
-  });
+  const existingProductIndex = cart.findIndex(p => p._id === product._id);
+  if (existingProductIndex !== -1) {
+    const newCart = [...cart];
+    newCart[existingProductIndex].quantity = (newCart[existingProductIndex].quantity || 1) + 1;
+    setCart(newCart);
+  } else {
+    setCart(prev => [...prev, { ...product, quantity: 1 }]);
+  }
 };
 
-  useEffect(() => {
-  if (!user.email) {
-    navigate("/login");
-    return;
-  }
-  // ...
-}, [user, navigate]);
 
+  useEffect(() => {
+    fetchProducts();
+  }, []);
 
   return (
     <div className="form-container">
