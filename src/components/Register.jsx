@@ -44,12 +44,12 @@ export default function Register() {
       </p>
       <button onClick={handleSubmit}>Submit</button>
       <hr />
-      {users &&
-        users.map((value) => (
-          <li>
-            {value.name}-{value.email}-{value.pass}
-          </li>
-        ))}
+      {users && users.map((value, index) => (
+  <li key={index}>
+    {value.name} - {value.email} - {value.pass}
+  </li>
+))}
+
     </div>
   );
 }

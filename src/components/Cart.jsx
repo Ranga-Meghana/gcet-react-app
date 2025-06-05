@@ -9,16 +9,18 @@ export default function Cart() {
   const navigate = useNavigate();
 
   const updateQuantity = (index, change) => {
-    const updatedCart = [...cart];
-    if (!updatedCart[index].quantity) updatedCart[index].quantity = 1;
-    updatedCart[index].quantity += change;
-
-    if (updatedCart[index].quantity < 1) {
-      updatedCart.splice(index, 1);
-    }
-
-    setCart(updatedCart);
-  };
+  setCart((prevCart) => {
+    const newCart = prevCart.map((item, i) => {
+      if (i === index) {
+        const newQuantity = (item.quantity || 1) + change;
+        if (newQuantity < 1) return null; 
+        return { ...item, quantity: newQuantity };
+      }
+      return item;
+    }).filter(Boolean); 
+    return newCart;
+  });
+};
 
   const totalPrice = cart.reduce(
     (sum, item) => sum + item.price * (item.quantity || 1),
