@@ -10,13 +10,12 @@ export default function Product() {
   const [products, setProducts] = useState([]);
    const fetchProducts = async () => {
       try {
-        const res = await axios.get("http://localhost:8080/products");
-        setProducts(res.data);
-      } catch (err) {
-        console.error("Error", err);
-      }
-    };
-
+        const res = await axios.get(`${import.meta.env.VITE_API_URL}/products/all`);
+      setProducts(res.data);
+    } catch (err) {
+      console.error("Error fetching products:", err);
+    }
+  };
 
   useEffect(() => {
    
