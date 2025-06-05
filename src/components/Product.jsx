@@ -2,6 +2,7 @@ import React, { useContext, useState, useEffect } from "react";
 import { AppContext } from "../App";
 import axios from "axios"; 
 import '../App.css';
+import './Product.css'
 
 export default function Product() {
   const { user, cart, setCart } = useContext(AppContext);
@@ -29,18 +30,16 @@ export default function Product() {
   }, []);
 
   return (
-    <div className="form-container">
-      {user && <h2 className="form-title">Welcome, {user.name}!</h2>}
-      <p style={{ color: "#d86c7a" }}>Product List</p><br />
-
-      <ul style={{ listStyle: "none", padding: 0 }}>
-        {products.map(product => (
-          <li key={product._id} style={{ margin: "10px 0" }}>
-            <strong>{product.name}</strong>: ${product.price}{" "}
-            <button onClick={() => addToCart(product)}>Add to Cart</button>
-          </li>
-        ))}
-      </ul>
+    <div className="product-list">
+  {products.map(product => (
+    <div className="product-card" key={product._id}>
+      <h3>{product.name}</h3>
+      <p>${product.price}</p>
+      <img src={product.image} alt={product.name} className="product-image" />
+      <button onClick={() => addToCart(product)}>Add to Cart</button>
     </div>
+  ))}
+</div>
+
   );
 }
