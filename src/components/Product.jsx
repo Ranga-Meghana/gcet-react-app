@@ -39,7 +39,7 @@ export default function Product() {
   return (
     <div className="form-container">
       {user && <h2 className="form-title">Welcome, {user.name}!</h2>}
-      <p style={{ color: "#d86c7a" }}>Product List</p><br />
+      <p className="product-title-3d">Product List</p><br />
 
       <div className="product-grid">
   {products.map(product => (
