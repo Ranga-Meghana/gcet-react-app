@@ -46,6 +46,16 @@ export default function Product() {
     <div key={product._id} className="product-card">
       <h4>{product.name}</h4>
       <h5>{product.description}</h5>
+      <img 
+        src={product.imgUrl} 
+        alt={product.name} 
+        style={{ 
+          width: "100%", 
+          height: "auto", 
+          objectFit: "contain", 
+          marginTop: "10px" 
+        }} 
+      />
       <p>${product.price}</p>
       <button onClick={() => addToCart(product)}>Add to Cart</button>
     </div>
