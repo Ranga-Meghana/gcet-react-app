@@ -1,9 +1,12 @@
+/* Base Reset and Typography */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f7f7f9;
   margin: 0;
   padding: 0;
   color: #333;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
 }
 
 a {
@@ -11,10 +14,13 @@ a {
   text-decoration: none;
   transition: color 0.3s ease;
 }
-a:hover {
+a:hover,
+a:focus {
   color: #180608;
+  outline: none;
 }
 
+/* Header */
 header {
   background-color: #fff0f2;
   padding: 20px 40px;
@@ -23,6 +29,7 @@ header {
   align-items: center;
   border-bottom: 2px solid #d86c7a;
   box-shadow: 0 2px 5px rgba(216, 108, 122, 0.2);
+  flex-wrap: wrap;
 }
 
 header h1 {
@@ -33,12 +40,28 @@ header h1 {
   letter-spacing: 1.2px;
 }
 
-header nav a {
-  margin-left: 20px;
-  font-weight: 600;
+header nav a i {
+  margin-right: 8px;
   font-size: 16px;
+  vertical-align: middle;
+  color: #d86c7a;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
+@media (max-width: 600px) {
+  header nav a {
+    display: block;
+    margin: 8px 0;
+    text-align: center;
+  }
+}
+
+header nav a:hover i {
+  transform: scale(1.2);
+  color: #180608;
+}
+
+/* Footer */
 footer {
   background-color: #fff0f2;
   text-align: center;
@@ -49,11 +72,12 @@ footer {
   margin-top: 40px;
 }
 
+/* Form Styling */
 .form-container {
   background: white;
   max-width: 700px;
   margin: 30px auto;
-  padding: 25px 30px;
+  padding: 30px;
   border-radius: 12px;
   box-shadow: 0 5px 20px rgba(216, 108, 122, 0.15);
 }
@@ -61,7 +85,7 @@ footer {
 .form-title {
   font-size: 26px;
   color: #d86c7a;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   font-weight: 700;
   text-align: center;
 }
@@ -74,15 +98,16 @@ footer {
   border: 1.5px solid #d86c7a;
   border-radius: 8px;
   font-size: 16px;
-  transition: border-color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-.form-container input[type="text"]:focus,
-.form-container input[type="password"]:focus {
+.form-container input:focus {
   border-color: #b84758;
+  box-shadow: 0 0 0 3px rgba(216, 108, 122, 0.2);
   outline: none;
 }
 
+/* Button Styling */
 button {
   background-color: #d86c7a;
   color: white;
@@ -92,20 +117,23 @@ button {
   font-size: 16px;
   cursor: pointer;
   font-weight: 700;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 button:hover {
   background-color: #b84758;
+  transform: scale(1.03);
 }
 
+/* Product Grid */
 .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
   gap: 22px;
-  margin-top: 20px;
+  margin: 20px 0;
+  padding: 0 20px;
 }
- 
+
 .product-card {
   background-color: #fff0f2;
   border: 2px solid #d86c7a;
@@ -122,14 +150,14 @@ button:hover {
 }
 
 .product-card h4 {
-  margin: 12px 0 8px 0;
+  margin: 12px 0 8px;
   color: #b84758;
   font-weight: 700;
   font-size: 20px;
 }
 
 .product-card p {
-  margin: 6px 0 14px 0;
+  margin: 6px 0 14px;
   font-size: 18px;
   color: #8b444b;
 }
@@ -139,6 +167,7 @@ button:hover {
   padding: 10px 0;
 }
 
+/* Quantity Controls */
 .product-card .quantity-controls {
   display: flex;
   justify-content: center;
@@ -156,6 +185,14 @@ button:hover {
   padding: 0;
   line-height: 1;
   user-select: none;
+  background-color: #d86c7a;
+  color: white;
+  border: none;
+  transition: transform 0.2s ease;
+}
+
+.product-card .quantity-controls button:hover {
+  transform: scale(1.1);
 }
 
 .product-card .quantity-controls span {
@@ -165,11 +202,13 @@ button:hover {
   text-align: center;
 }
 
+/* Utility Classes */
 .message {
   font-weight: 600;
   font-size: 18px;
   text-align: center;
   color: #d86c7a;
+  margin: 20px 0;
 }
 
 .total {
@@ -177,8 +216,10 @@ button:hover {
   font-weight: 700;
   font-size: 22px;
   color: #d86c7a;
+  padding: 10px 20px;
 }
 
+/* Lists */
 ul {
   margin: 10px 0 0 20px;
   color: #8b444b;
@@ -186,6 +227,7 @@ ul {
   font-size: 16px;
 }
 
+/* Responsive Design */
 @media (max-width: 600px) {
   .form-container {
     padding: 20px 15px;
@@ -194,10 +236,14 @@ ul {
   header {
     flex-direction: column;
     gap: 15px;
+    text-align: center;
   }
 
   header nav a {
-    margin-left: 0;
-    margin-right: 15px;
+    margin: 10px;
+  }
+
+  .total {
+    text-align: center;
   }
 }
